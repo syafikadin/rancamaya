@@ -9,7 +9,7 @@ async function Gallery() {
   return (
     <section className={styles.gallerySection}>
       <div className="container">
-        <Heading className="text-center">Gallery</Heading>
+        <Heading className="text-center">Estate</Heading>
         <div className={styles.galleryGrid}>
           {/* {rooms.map((item) => (
             <div key={item.id} className={styles.thumbnail}>
