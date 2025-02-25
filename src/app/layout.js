@@ -1,5 +1,4 @@
 import "./globals.css";
-import { auth } from "../../auth";
 import Navbar from "./_ui/Navbar";
 import Footer from "./_components/Footer";
 
@@ -13,7 +12,7 @@ const roboto_font = Roboto({
 
 export const metadata = {
   title: "Rancamaya",
-  description: "Hotel | Golf | Estate",
+  description: "Hotel | Vila & Apart | Estate",
 };
 
 export default function RootLayout({ children }) {

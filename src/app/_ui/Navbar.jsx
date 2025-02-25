@@ -40,7 +40,7 @@ function Navbar({ signOutAction }) {
                 href="/vila"
                 onClick={() => setHideMenu(true)}
               >
-                Vila & Apt.
+                Vila
               </Link>
             </li>
             <li>

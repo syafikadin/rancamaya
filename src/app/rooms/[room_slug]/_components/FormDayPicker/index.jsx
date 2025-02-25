@@ -4,7 +4,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 import styles from "./styles.module.css";
-import { getReservationByID, getRoomReservations } from "@/app/_lib/supabase/reservations";
+// import { getReservationByID, getRoomReservations } from "@/app/_lib/supabase/reservations";
 import { useParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Loader from "@/app/_ui/Loader";
@@ -15,33 +15,44 @@ function FormDayPicker({ handleDateSelection, start, end }) {
   const { room_slug, id } = useParams();
   const calendarRangeRef = useRef({ start: new Date(2024, 0), end: new Date(2027, 11) });
 
+  const dummyReservations = [
+    { id: 1, room_id: "1", start_date: "2025-03-01", end_date: "2025-03-05" },
+    { id: 2, room_id: "2", start_date: "2025-03-10", end_date: "2025-03-12" },
+    { id: 3, room_id: "3", start_date: "2025-03-15", end_date: "2025-03-20" },
+  ];
+
   useEffect(() => {
     if (!room_slug && !id) return;
+
     async function getBusyDays() {
       setIsLoading(true);
-      let reservations = [];
       let busy_days = [];
 
+      // Menggunakan data dummy untuk simulasi
+      let reservations = dummyReservations;
       if (id) {
-        const reservation_target = await getReservationByID(id);
+        const reservation_target = reservations.find((res) => res.id === parseInt(id));
 
-        reservations = await getRoomReservations(reservation_target.room_id);
-        busy_days = reservations.filter((item) =>
-          id != item.id ? { before: item.end_date, after: item.start_date } : false
-        );
+        if (reservation_target) {
+          reservations = dummyReservations.filter(
+            (item) => item.room_id === reservation_target.room_id
+          );
+        }
       } else {
-        reservations = await getRoomReservations(room_slug);
-        busy_days = reservations.map((item) => ({ before: item.end_date, after: item.start_date }));
+        reservations = dummyReservations.filter((item) => item.room_id === room_slug);
       }
 
-      // console.log("BLOCKED");
-      // console.log(reservations.map((item) => ({ before: item.end_date, after: item.start_date })));
+      busy_days = reservations.map((item) => ({
+        before: new Date(item.end_date),
+        after: new Date(item.start_date),
+      }));
+
       setDisabledDays(busy_days);
       setIsLoading(false);
     }
 
     getBusyDays();
-  }, []);
+  }, [room_slug, id]);
 
   if (isLoading)
     return (

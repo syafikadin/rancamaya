@@ -7,7 +7,7 @@ import FormDayPicker from "../FormDayPicker";
 
 import { useFormState } from "react-dom";
 import ReservationButton from "../ReservationButton";
-import { useCallback, useState } from "react";
+import { useActionState, useCallback, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const initialState = {
@@ -18,7 +18,7 @@ const initialState = {
 };
 
 function RoomBookingForm({ bookingAction, room }) {
-  const [state, formAction] = useFormState(bookingAction, initialState);
+  const [state, formAction] = useActionState(bookingAction, initialState);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
 
