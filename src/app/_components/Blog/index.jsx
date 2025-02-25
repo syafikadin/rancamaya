@@ -6,7 +6,7 @@ function Blog() {
   return (
     <section className={styles.blogSection}>
       <div className="container">
-        <Heading className={styles.heading}>Property</Heading>
+        <Heading className={styles.heading}>Golf Estate</Heading>
         <p className={styles.description}>
           Lorem Ipsum is available, but the majority have suffered
         </p>

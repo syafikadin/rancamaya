@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import GuestDropdown from "./GuestDropdown";
 
 function Navbar({ signOutAction }) {
@@ -12,11 +13,15 @@ function Navbar({ signOutAction }) {
   return (
     <header>
       <div className="container header-items">
-        <h2>LOGO</h2>
+        <Image width={40} height={40} src="/logo.png" alt="" />
         <nav className={`navbar ${hideMenu ? "hide-menu" : "show-menu"}`}>
           <ul>
             <li>
-              <Link className={pathname === "/" ? "active" : ""} href="/" onClick={() => setHideMenu(true)}>
+              <Link
+                className={pathname === "/" ? "active" : ""}
+                href="/"
+                onClick={() => setHideMenu(true)}
+              >
                 Home
               </Link>
             </li>
@@ -29,6 +34,24 @@ function Navbar({ signOutAction }) {
                 Rooms
               </Link>
             </li>
+            <li>
+              <Link
+                className={pathname.includes("vila") ? "active" : ""}
+                href="/vila"
+                onClick={() => setHideMenu(true)}
+              >
+                Vila & Apt.
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={pathname.includes("golf") ? "active" : ""}
+                href="/golf"
+                onClick={() => setHideMenu(true)}
+              >
+                Golf
+              </Link>
+            </li>
             {/* <li>About</li> */}
             <li>
               <Link
@@ -39,15 +62,29 @@ function Navbar({ signOutAction }) {
                 Contact Us
               </Link>
             </li>
+
             <li>
-            <Link
-                  className={pathname.includes("account") || pathname === "/signin" ? "active" : ""}
-                  href="/signin"
-                  onClick={() => setHideMenu(true)}
-                >
-                  Guest Area
-                </Link>
-              {/* {user ? (
+              <a href="#" className="btn-masuk">
+                Masuk
+              </a>
+            </li>
+            <li>
+              <a href="#" className="btn-daftar">
+                Daftar
+              </a>
+            </li>
+
+            {/* <li>
+              <Link
+                className={
+                  pathname.includes("account") || pathname === "/signin" ? "active" : ""
+                }
+                href="/signin"
+                onClick={() => setHideMenu(true)}
+              >
+                Guest Area
+              </Link>
+              {user ? (
                 <GuestDropdown user={user} signOutAction={signOutAction} />
               ) : (
                 <Link
@@ -57,8 +94,8 @@ function Navbar({ signOutAction }) {
                 >
                   Guest Area
                 </Link>
-              )} */}
-            </li>
+              )}
+            </li> */}
           </ul>
         </nav>
         <button onClick={() => setHideMenu(!hideMenu)} className="toggle-menu-button">
