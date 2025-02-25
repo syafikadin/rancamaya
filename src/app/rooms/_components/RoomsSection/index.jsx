@@ -56,11 +56,14 @@ async function RoomsSection({ filter, range }) {
     const arrivalDate = range.split("_")?.at(0);
     const departureDate = range.split("_")?.at(1);
     filteredRooms = rooms.filter((room) => {
-      // Check if any of the available dates overlap with the arrival and departure dates
-      return room.availableDates.some((date) => {
-        const roomDate = new Date(date);
-        return roomDate >= arrivalDate && roomDate <= departureDate;
-      });
+      // Ensure availableDates is defined and is an array before using .some()
+      if (Array.isArray(room.availableDates)) {
+        return room.availableDates.some((date) => {
+          const roomDate = new Date(date);
+          return roomDate >= arrivalDate && roomDate <= departureDate;
+        });
+      }
+      return false; // If availableDates is not defined or not an array, return false
     });
   }
 

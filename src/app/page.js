@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'; // Import redirect from next/navigation
 import Image from "next/image";
 import styles from "./styles.css";
 import About from "./_components/About";
