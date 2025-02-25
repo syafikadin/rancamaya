@@ -16,7 +16,7 @@ function Rooms({ searchParams }) {
   const range = searchParams?.range ?? "";
   return (
     <>
-      <Banner title={"WHERE WILL YOU SLEEP TONIGHT?"} />
+      <Banner title={"RASAKAN KENYAMANAN MENGINAP DI SINI"} />
 
       <div className={`container ${styles.roomsHolder}`}>
         <FilterSection filters={{ filter, range }} />

@@ -1,7 +1,7 @@
 import FilterSection from "./_components/FilterSection";
 
 import styles from "./styles.module.css";
-import Banner from "../_components/Banner";
+import BannerVilla from "../_components/BannerVilla";
 import VillasSection from "./_components/VillasSection/page";
 import { Suspense } from "react";
 import Loader from "../_ui/Loader";
@@ -16,7 +16,7 @@ function Villas({ searchParams }) {
   const range = searchParams?.range ?? "";
   return (
     <>
-      <Banner title={"WHERE WILL YOU SLEEP TONIGHT?"} />
+      <BannerVilla title={"VILLA PRIBADI UNTUK LIBURAN SEMPURNA"} />
 
       <div className={`container ${styles.villaHolder}`}>
         <FilterSection filters={{ filter, range }} />
