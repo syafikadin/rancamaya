@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import RoomContainer from "./_components/RoomContainer";
+// import RoomContainer from "./_components/RoomContainer";
 import LoadingSpinner from "@/app/_ui/LoadingSpinner";
 
 export const metadata = {
@@ -17,7 +17,7 @@ function RoomDetails({ params }) {
           </div>
         }
       >
-        <RoomContainer params={params} />
+        {/* <RoomContainer params={params} /> */}
       </Suspense>
     </section>
   );
