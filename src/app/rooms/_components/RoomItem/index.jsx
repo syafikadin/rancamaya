@@ -9,13 +9,15 @@ function RoomItem({ id, imgPath, price, title }) {
     <div className={styles.roomsGrid}>
       <div className={styles.roomItem}>
         <div className={styles.imgOverlay}>
-          {/* <Image fill src={`${SUPABASE_ROOMS_URL}/${imgPath}`} alt="" /> */}
-          <Image fill src="/room2.jpg" alt="" />
+          <Image fill src={`/${imgPath}`} alt="" />
+          {/* <Image fill src="/room2.jpg" alt="" /> */}
         </div>
         <div className={styles.roomDescription}>
           <div>
             <h2 className={styles.roomTitle}>{title}</h2>
-            <Link href={`rooms/${id}`}>From ${price} / Night</Link>
+            <Link href={`rooms/${id}`}>
+              From Rp{price.toLocaleString("id-ID")} / Night
+            </Link>
           </div>
         </div>
       </div>

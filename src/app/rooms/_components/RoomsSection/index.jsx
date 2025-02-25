@@ -8,38 +8,38 @@ async function RoomsSection({ filter, range }) {
   const rooms = [
     {
       id: 1,
-      name: "Deluxe Suite",
-      price: 200,
+      name: "Deluxe",
+      price: 200000,
       capacity: 2,
-      // thumbnail: "deluxe-suite.jpg",
+      thumbnail: "deluxe.jpg",
     },
     {
       id: 2,
-      name: "Family Room",
-      price: 150,
+      name: "Grand Suite",
+      price: 150000,
       capacity: 4,
-      // thumbnail: "family-room.jpg",
+      thumbnail: "grand_suite.jpg",
     },
     {
       id: 3,
-      name: "Standard Room",
-      price: 100,
+      name: "Lagoon Deluxe",
+      price: 300000,
       capacity: 2,
-      // thumbnail: "standard-room.jpg",
+      thumbnail: "lagoon_deluxe.jpg",
     },
     {
       id: 4,
-      name: "Luxury Penthouse",
-      price: 500,
+      name: "Superior Queen",
+      price: 500000,
       capacity: 6,
-      // thumbnail: "luxury-penthouse.jpg",
+      thumbnail: "superior_queen.jpg",
     },
     {
       id: 5,
-      name: "Economy Single",
-      price: 80,
+      name: "Superior",
+      price: 800000,
       capacity: 1,
-      // thumbnail: "economy-single.jpg",
+      thumbnail: "superior.jpg",
     },
   ];
   // console.log({ rooms: rooms.length });
@@ -85,7 +85,7 @@ async function RoomsSection({ filter, range }) {
           id={item.id}
           title={item.name}
           price={item.price}
-          // imgPath={item.thumbnail}
+          imgPath={item.thumbnail}
           link="#"
         />
       ))}
