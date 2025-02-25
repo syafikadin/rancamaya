@@ -19,7 +19,7 @@ function Rooms({ searchParams }) {
       <Banner title={"WHERE WILL YOU SLEEP TONIGHT?"} />
 
       <div className={`container ${styles.roomsHolder}`}>
-        {/* <FilterSection filters={{ filter, range }} /> */}
+        <FilterSection filters={{ filter, range }} />
 
         <Suspense
           key={`${filter}-${range}`}
