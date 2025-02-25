@@ -17,7 +17,7 @@
   }
   
   .bookingBtn:disabled {
-    background-color: rgb(233, 65, 99);
+    background-color: #386c64;
     cursor: not-allowed;
   }
   
