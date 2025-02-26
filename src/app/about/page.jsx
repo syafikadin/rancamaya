@@ -33,12 +33,12 @@ const AboutUs = () => {
           <img
             alt="Group of people exercising and having fun"
             className={styles.image}
-            src="https://placehold.co/400x250"
+            src="/room1.jpg"
           />
           <img
             alt="Group of people smiling and posing for a photo"
             className={styles.image}
-            src="https://placehold.co/400x250"
+            src="/room2.jpg"
           />
         </div>
       </div>
