@@ -55,11 +55,11 @@ function Navbar({ signOutAction }) {
             {/* <li>About</li> */}
             <li>
               <Link
-                href={"/contact"}
-                className={pathname === "/contact" ? "active" : ""}
+                href={"/about"}
+                className={pathname === "/about" ? "active" : ""}
                 onClick={() => setHideMenu(true)}
               >
-                Contact Us
+                About
               </Link>
             </li>
 
