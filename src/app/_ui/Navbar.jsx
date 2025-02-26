@@ -64,14 +64,22 @@ function Navbar({ signOutAction }) {
             </li>
 
             <li>
-              <a href="#" className="btn-masuk">
-                Masuk
-              </a>
+              <Link
+                href="/login"
+                className={pathname === "/login" ? "active btn-masuk" : "btn-masuk"}
+                onClick={() => setHideMenu(true)}
+              >
+                Login
+              </Link>
             </li>
             <li>
-              <a href="#" className="btn-daftar">
-                Daftar
-              </a>
+              <Link
+                href="/register"
+                className={pathname === "/register" ? "active btn-daftar" : "btn-daftar"}
+                onClick={() => setHideMenu(true)}
+              >
+                Register
+              </Link>
             </li>
 
             {/* <li>
